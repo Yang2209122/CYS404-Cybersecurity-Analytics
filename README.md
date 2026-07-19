@@ -155,23 +155,31 @@ The Spark model and its evaluation remain the main model analysis in Part I. The
 
 Open a terminal in the folder containing:
 
+```text
 streamlit_app.py
 clustered_incidents.csv
 requirements.txt
+```
 
 ### Step 2: Install the required packages
 
+```bash
 pip install -r requirements.txt
+```
 
 ### Step 3: Start Streamlit
 
+```bash
 streamlit run streamlit_app.py
+```
 
 The application should open automatically in a browser.
 
 The default local address is:
 
+```text
 http://localhost:8501
+```
 
 The Streamlit application sends prediction requests to the deployed FastAPI service on Render.
 
@@ -181,23 +189,33 @@ The Streamlit application sends prediction requests to the deployed FastAPI serv
 
 ### Step 1: Install the required packages
 
+```bash
 pip install -r requirements.txt
+```
 
 ### Step 2: Start FastAPI
 
+```bash
 uvicorn main:app --reload
+```
 
 The local API will normally be available at:
 
+```text
 http://127.0.0.1:8000
+```
 
 The local Swagger documentation will normally be available at:
 
+```text
 http://127.0.0.1:8000/docs
+```
 
 The local health-check route will normally be available at:
 
+```text
 http://127.0.0.1:8000/health
+```
 
 ---
 
@@ -221,7 +239,7 @@ http://127.0.0.1:8000/health
 
 ```json
 {
-  "predicted_resolution_time_hours": 36.42
+  "predicted_resolution_time_hours": 53.81
 }
 ```
 
