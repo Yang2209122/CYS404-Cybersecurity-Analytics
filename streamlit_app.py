@@ -539,40 +539,10 @@ with prediction_tab:
                     result["predicted_resolution_time_hours"]
                 )
                 predicted_days = predicted_hours / 24
-                historical_median = float(
-                    df[
-                        "Incident Resolution Time (in Hours)"
-                    ].median()
-                )
-                difference = predicted_hours - historical_median
-
-                lower_quartile = float(
-                    df[
-                        "Incident Resolution Time (in Hours)"
-                    ].quantile(0.25)
-                )
-                upper_quartile = float(
-                    df[
-                        "Incident Resolution Time (in Hours)"
-                    ].quantile(0.75)
-                )
-
-                if predicted_hours < lower_quartile:
-                    interpretation = (
-                        "Short relative to historical incidents"
-                    )
-                elif predicted_hours > upper_quartile:
-                    interpretation = (
-                        "Long relative to historical incidents"
-                    )
-                else:
-                    interpretation = (
-                        "Within the typical historical range"
-                    )
 
                 st.success("Prediction completed successfully.")
 
-                result_1, result_2, result_3 = st.columns(3)
+                result_1, result_2 = st.columns(2)
                 result_1.metric(
                     "Predicted Resolution Time",
                     f"{predicted_hours:.2f} hours"
@@ -580,14 +550,6 @@ with prediction_tab:
                 result_2.metric(
                     "Equivalent Duration",
                     f"{predicted_days:.2f} days"
-                )
-                result_3.metric(
-                    "Difference from Historical Median",
-                    f"{difference:+.2f} hours"
-                )
-
-                st.info(
-                    f"**Historical interpretation:** {interpretation}."
                 )
 
                 with st.expander("View Submitted Incident Data"):
