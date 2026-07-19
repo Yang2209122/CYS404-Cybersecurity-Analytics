@@ -9,7 +9,6 @@ import streamlit as st
 # Application configuration
 st.set_page_config(
     page_title="Cybersecurity Incident Analytics",
-    page_icon="🔐",
     layout="wide"
 )
 
