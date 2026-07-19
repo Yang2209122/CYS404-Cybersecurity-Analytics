@@ -1,0 +1,11 @@
+{
+  "country": "China",
+  "year": 2019,
+  "attack_type": "Phishing",
+  "target_industry": "Education",
+  "financial_loss_million": 80.53,
+  "affected_users": 773169,
+  "attack_source": "Hacker Group",
+  "security_vulnerability_type": "Unpatched Software",
+  "defense_mechanism_used": "VPN"
+}
